@@ -24,7 +24,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{reedthesis}[2004/01/27 The Reed College Thesis Class]
+\ProvidesClass{oakbook}[2020/07/11 My Book Template]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 \LoadClass{book}
@@ -96,6 +96,8 @@
 % \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
 % \newcommand{\NormalTok}[1]{{#1}}
 
+\usepackage{calc} % calculate headwidth
+
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -104,16 +106,22 @@
 % This gives us rules below the headers
 \AtBeginDocument{%
   \fancyhf{}
-  \fancyhead[LE,RO]{\thepage}
-%  \fancyhead[RE]{\slshape \leftmark}
-%  \fancyhead[LO]{\slshape \rightmark}
-%	The above makes your headers in all caps. If you would like different headers, choose one of the following options (be sure to remove the % symbol from both the right and left headers):
-	 \fancyhead[RE]{\slshape \nouppercase \leftmark} % This makes the headers on the RIGHT side pages be italic and use lowercase With Capitals When Specified.
-	\fancyhead[LO]{\slshape \nouppercase \rightmark} % This does the same thing to the LEFT side pages
-%	or
-%	\fancyhead[RE]{\scshape \leftmark} % The RIGHT headers will be in small caps.
-%	\fancyhead[LO]{\scshape \rightmark} %  And so will the LEFT headers
+  \if@twoside
+      \fancyfoot[CE,CO]{\thepage}
+    	 \fancyhead[RE]{\small \slshape \nouppercase \rightmark} % This makes the headers on the RIGHT side pages be italic and use lowercase With Capitals When Specified.
+    	\fancyhead[LO]{\small \slshape \nouppercase \leftmark} % This does the same thing to the LEFT side pages
+    \else
+%	\fancyhead[L]{\small \slshape \nouppercase \rightmark}
+	\fancyhead[R]{{\footnotesize \bfseries \MakeUppercase \leftmark} \quad {\small \slshape \thepage}}
+	\fi
   \pagestyle{fancy}
+  \renewcommand{\chaptermark}[1]{% 
+	\markboth{\thechapter.\ #1}{}}
+%  \addtolength{\headwidth}{\marginparsep}
+%  \addtolength{\headwidth}{\marginparwidth}
+\fancyheadoffset[LE,RO]{\marginparsep+\marginparwidth}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 % Psych majors: You do not need the following six lines, as it conflicts with apacite, so comment them out.
   \let\oldthebibliography=\thebibliography
