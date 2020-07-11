@@ -1,10 +1,10 @@
 ```{r include_packages_2, include = FALSE}
-# This chunk ensures that the thesisdown package is
-# installed and loaded. This thesisdown package includes
+# This chunk ensures that the oakdown package is
+# installed and loaded. This oakdown package includes
 # the template files for the thesis and also two functions
 # used for labeling and referencing
 if (!require(remotes)) {
-  if (params$`Install needed packages for {thesisdown}`) {
+  if (params$`Install needed packages for {oakdown}`) {
     install.packages("remotes", repos = "https://cran.rstudio.com")
   } else {
     stop(
@@ -16,7 +16,7 @@ if (!require(remotes)) {
   }
 }
 if (!require(dplyr)) {
-  if (params$`Install needed packages for {thesisdown}`) {
+  if (params$`Install needed packages for {oakdown}`) {
     install.packages("dplyr", repos = "https://cran.rstudio.com")
   } else {
     stop(
@@ -28,7 +28,7 @@ if (!require(dplyr)) {
   }
 }
 if (!require(ggplot2)) {
-  if (params$`Install needed packages for {thesisdown}`) {
+  if (params$`Install needed packages for {oakdown}`) {
     install.packages("ggplot2", repos = "https://cran.rstudio.com")
   } else {
     stop(
@@ -40,7 +40,7 @@ if (!require(ggplot2)) {
   }
 }
 if (!require(bookdown)) {
-  if (params$`Install needed packages for {thesisdown}`) {
+  if (params$`Install needed packages for {oakdown}`) {
     install.packages("bookdown", repos = "https://cran.rstudio.com")
   } else {
     stop(
@@ -51,20 +51,20 @@ if (!require(bookdown)) {
     )
   }
 }
-if (!require(thesisdown)) {
-  if (params$`Install needed packages for {thesisdown}`) {
-    remotes::install_github("ismayc/thesisdown")
+if (!require(oakdown)) {
+  if (params$`Install needed packages for {oakdown}`) {
+    remotes::install_github("omkarakatta/oakdown")
   } else {
     stop(
       paste(
         "You need to run",
-        'remotes::install_github("ismayc/thesisdown")',
+        'remotes::install_github("omkarakatta/oakdown")',
         "first in the Console."
       )
     )
   }
 }
-library(thesisdown)
+library(oakdown)
 library(dplyr)
 library(ggplot2)
 library(knitr)
@@ -138,7 +138,7 @@ ggplot(mean_delay_by_carrier, aes(x = carrier, y = mean_dep_delay)) +
 
 Here is a reference to this image: Figure \@ref(fig:delaysboxplot).
 
-A table linking these carrier codes to airline names is available at <https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv>.
+A table linking these carrier codes to airline names is available at <https://github.com/omkarakatta/pnwflights14/blob/master/data/airlines.csv>.
 
 \clearpage
 
