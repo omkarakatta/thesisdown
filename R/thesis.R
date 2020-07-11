@@ -19,9 +19,10 @@
 #' \dontrun{
 #' output:thesisdown::thesis_pdf
 #' }
-thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...) {
+thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", 
+                       template = "template.tex", ...) {
   base <- bookdown::pdf_book(
-    template = "template.tex",
+    template = template,
     toc = toc,
     toc_depth = toc_depth,
     highlight = highlight,
