@@ -1,0 +1,133 @@
+---
+# Inspired by Michael Harper: https://github.com/dr-harper/example-rmd-templates
+title: "Title"
+name: Omkar A. Katta
+teammates: teammate
+task: task
+supervisor: supervisor
+due: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  bookdown::pdf_document2:
+    template: reporttemplate.tex 
+    latex_engine: xelatex
+toc: true
+# header-includes:
+bibliography: master.bib
+---
+
+
+
+```{r, echo=FALSE, warning=F, message=F, app = "T"}
+####################################################################
+# NAME:                         Omkar A. Katta
+#
+# DESCRIPTION:                  
+#
+# CONTENTS:                     
+#
+####################################################################
+
+### Preliminaries -----
+library(knitr)
+opts_chunk$set(echo = T,
+               fig.height = 4, 
+               fig.width = 6, 
+               fig.align = 'center')
+
+```
+
+<!-- \begin{framed} -->
+<!-- Things to find and replace in Rmd file: -->
+<!-- \begin{enumerate} -->
+<!--   \item file name -->
+<!--   \item YAML parameters -->
+<!--   \item R file name -->
+<!--   \item R file header -->
+<!--   \item Be sure to save the R file as a text file -->
+<!-- \end{enumerate} -->
+<!-- \end{framed} -->
+
+# Problem
+
+$\paren{x + y}$
+
+$\brac{\setN \comma \scriptN}$
+
+$\StdNormalD$
+
+$\PoissonD{\lambda}$
+
+$\InvGammaD{\alpha}{\beta}$
+
+$\ChiSqD{\nu}$
+
+$\InvChiSqD{\nu}$
+
+$\chi$ $\ChiSqS$
+
+
+```{r, hello-world, app = "T"}
+### Problem 1 -----
+print("Hello World")
+
+```
+
+Inspired  by  the  decisions  individuals  have  had  to  make  amidst  the  COVID-19  pandemic,  ourproject aims to model the trade-off between reducing the risk of spreading/catching the virus andbeing socially and economically active in two ways. Both our models draw from the SIR frameworkto organize the different payoff structures for susceptible, infected, and recovered people. Embeddedin the payoff structure of infected people,  we consider a social cost associated with spreading theinfection to susceptible people
+
+# Problem
+
+[@cattaneo2019practical1]
+
+
+
+
+## Subsection {#id}
+asdf
+
+\begin{equation} 
+\begin{split}
+\mathrm{Var}(\hat{\beta}) & =\mathrm{Var}((X'X)^{-1}X'y)\\
+ & =(X'X)^{-1}X'\mathrm{Var}(y)((X'X)^{-1}X')'\\
+ & =(X'X)^{-1}X'\mathrm{Var}(y)X(X'X)^{-1}\\
+ & =(X'X)^{-1}X'\sigma^{2}IX(X'X)^{-1}\\
+ & =(X'X)^{-1}\sigma^{2}
+\end{split}
+(\#eq:var-beta)
+\end{equation} 
+
+### Subsubsection 
+Look at \@ref(id). Look at equation \@ref(eq:var-beta).
+
+```{theorem, pyth, name="Pythagorean theorem"}
+For a right triangle, if $c$ denotes the length of the hypotenuse
+and $a$ and $b$ denote the lengths of the other two sides, we have
+
+$$a^2 + b^2 = c^2$$
+```
+
+See Theorem \@ref(thm:pyth).
+
+See [Upenn's website](https://www.upenn.edu/)
+```{R}
+print(knitr::all_labels())
+```
+
+\newpage
+
+
+# (APPENDIX) Appendix {-}
+
+# Proofs
+
+## More Proofs 
+
+# Details
+
+# Code Appendix
+
+
+```{r, ref.label=knitr::all_labels(app == "T"),echo=TRUE,eval=FALSE}
+```
+
+\newpage
+# References

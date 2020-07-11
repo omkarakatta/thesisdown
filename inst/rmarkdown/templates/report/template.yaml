@@ -1,0 +1,4 @@
+name:  Report
+description: >
+ Template for creating a report using R Markdown based on the oakdown package.
+

@@ -1,0 +1,81 @@
+\documentclass[11pt]{oakpaper}
+
+\usepackage{lipsum}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{enumitem}
+
+\usepackage{bbm}
+
+\usepackage{float}
+
+\usepackage{appendix}
+
+\usepackage{optidef}
+\usepackage{amssymb, amsmath, amsfonts, latexsym, mathtools, nccmath, xfrac}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\usepackage{OAKdefn/OAKdefn}
+
+\usepackage{hyperref}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+
+\usepackage{relsize}
+
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\setcounter{tocdepth}{1}
+
+\newtheorem{theorem}{Theorem}
+
+
+% Fix shaded
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+% Fix cslreferences
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+  {\par}
+  
+\title{$title$}
+\name{$name$}
+\task{$task$}
+\supervisor{$supervisor$}
+\due{$due$}
+  
+
+\begin{document}
+
+\maketitle
+
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+
+$body$
+
+\end{document}

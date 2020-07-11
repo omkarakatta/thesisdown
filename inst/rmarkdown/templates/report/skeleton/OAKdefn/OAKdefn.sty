@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% REQUIRED PACKAGES -------------------------
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{bbm}
+\RequirePackage[dvipsnames]{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% PAIRED DELIMITERS -------------------------
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\leftmod}{\mathopen{}\left} % \left (https://tex.stackexchange.com/questions/2607/spacing-around-left-and-right)
+\newcommand{\rightmod}{\right} % \right
+
+\newcommand{\paren}[1]{\leftmod(#1\rightmod)} % Parentheses
+\newcommand{\brac}[1]{\leftmod[#1\rightmod]} % Brackets
+\newcommand{\braces}[1]{\leftmod\{#1 \rightmod\}} % Braces
+\newcommand{\abs}[1]{\leftmod\lvert#1\rightmod\rvert} % Absolute Values
+\newcommand{\norm}[1]{\leftmod\lVert#1\rightmod\rVert} % Norm
+\newcommand{\set}[1]{\braces{#1}} % Set
+\newcommand{\seq}[1]{\leftmod\langle#1\rightmod\rangle} % Sequence
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% MISCELLANEOUS -------------------------
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Ind}[1]{\mathbbm 1\paren{#1}} % Indicator
+\newcommand{\intd}[1]{\, \mathrm{d} #1} % Integration Form
+\newcommand{\expon}[1]{\exp\braces{#1}} % Exponential Function
+\newcommand{\e}[1]{\times 10^{#1}} % Scientific Notation
+
+\newcommand{\eps}{\varepsilon} % epsilon
+
+\newcommand{\sth}{\text{ s.t. }}
+
+% Double-line letters
+\newcommand*\mathsetfont{\mathbb}
+\newcommand*\DeclareMathSet[1]{%
+   \expandafter\newcommand\csname set#1\endcsname{\mathsetfont{#1}}
+}
+\DeclareMathSet{A}
+\DeclareMathSet{B}
+\DeclareMathSet{C}
+\DeclareMathSet{D}
+\DeclareMathSet{E}
+\DeclareMathSet{F}
+\DeclareMathSet{G}
+\DeclareMathSet{H}
+\DeclareMathSet{I}
+\DeclareMathSet{J}
+\DeclareMathSet{K}
+\DeclareMathSet{L}
+\DeclareMathSet{M}
+\DeclareMathSet{N}
+\DeclareMathSet{O}
+\DeclareMathSet{P}
+\DeclareMathSet{Q}
+\DeclareMathSet{R}
+\DeclareMathSet{S}
+\DeclareMathSet{T}
+\DeclareMathSet{U}
+\DeclareMathSet{V}
+\DeclareMathSet{W}
+\DeclareMathSet{X}
+\DeclareMathSet{Y}
+\DeclareMathSet{Z}
+
+% Calligraphy Letters
+\newcommand*\mathcalfont{\mathcal}
+\newcommand*\DeclareMathCal[1]{%
+   \expandafter\newcommand\csname script#1\endcsname{\mathcalfont{#1}}
+}
+\DeclareMathCal{A}
+\DeclareMathCal{B}
+\DeclareMathCal{C}
+\DeclareMathCal{D}
+\DeclareMathCal{E}
+\DeclareMathCal{F}
+\DeclareMathCal{G}
+\DeclareMathCal{H}
+\DeclareMathCal{I}
+\DeclareMathCal{J}
+\DeclareMathCal{K}
+\DeclareMathCal{L}
+\DeclareMathCal{M}
+\DeclareMathCal{N}
+\DeclareMathCal{O}
+\DeclareMathCal{P}
+\DeclareMathCal{Q}
+\DeclareMathCal{R}
+\DeclareMathCal{S}
+\DeclareMathCal{T}
+\DeclareMathCal{U}
+\DeclareMathCal{V}
+\DeclareMathCal{W}
+\DeclareMathCal{X}
+\DeclareMathCal{Y}
+\DeclareMathCal{Z}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% STATISTICS
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Distributions/Functions -------------------------
+%%% S - symbol, D - distribution, F - function
+
+\newcommand{\comma}{\,,\:}
+
+% Uniform
+\DeclareMathOperator{\UnifSymbol}{Unif} 
+\newcommand{\Unif}[1]{\UnifSymbol#1} 
+
+% Normal
+\DeclareMathOperator{\NormalS}{\mathcal{N}} 
+\newcommand{\NormalD}[2]{\NormalS \paren{#1 \comma #2}} 
+\newcommand{\StdNormalD}{\NormalD{0}{1}} 
+
+% Beta
+\DeclareMathOperator{\BetaS}{Beta} 
+\newcommand{\BetaD}[2]{\BetaS \paren{#1 \comma #2}} 
+\newcommand{\BetaF}[2]{B\paren{#1 \comma #2}} 
+
+% Binomial
+\DeclareMathOperator{\BinomialS}{Binomial}
+\newcommand{\BinomialD}[2]{\BinomialS \paren{#1 \comma #2}}
+
+% Poisson
+\DeclareMathOperator{\PoissonS}{Poisson} 
+\newcommand{\PoissonD}[1]{\PoissonS \paren{#1}} 
+
+% Gamma
+\DeclareMathOperator{\GammaS}{Gamma}
+\newcommand{\GammaD}[2]{\GammaS\paren{#1 \comma #2}} 
+\newcommand{\GammaF}[1]{\Gamma\paren{#1}} 
+
+% Inverse Gamma
+\DeclareMathOperator{\InvGammaS}{invGamma}
+\newcommand{\InvGammaD}[2]{\InvGammaS\paren{#1 \comma #2}} 
+
+% Chi-Square
+\DeclareMathOperator{\ChiSqS}{\chi^2}
+\newcommand{\ChiSqD}[1]{\ChiSqS \paren{#1}}
+
+% Inverse Chi-Square
+\DeclareMathOperator{\InvChiSqS}{\textrm{inv-}\chi^2}
+\newcommand{\InvChiSqD}[1]{\InvChiSqS \paren{#1}}
+
+%%% Probability -------------------------
+
+\newcommand{\Prob}[1]{\mathbb P\paren{#1}} % Probability
+\newcommand{\Exp}[1]{\mathbb E\paren{#1}} % Expectation
+\DeclareMathOperator{\COV}{Cov} % Covariance
+\newcommand{\Cov}[1]{\COV\paren{#1}}
+\DeclareMathOperator{\VAR}{Var} % Variance
+\newcommand{\Var}[1]{\VAR\paren{#1}}
+\DeclareMathOperator{\AVAR}{Avar} % Asymptotic Variance
+\newcommand{\Avar}[1]{\AVAR\paren{#1}}
+\DeclareMathOperator{\SE}{se} % Standard Error
+\newcommand{\se}[1]{\SE\paren{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% LINEAR ALGEBRA
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\vect}[1]{\boldsymbol{#1}} % Vector
+\newcommand{\mat}[1]{\boldsymbol{\mathrm{#1}}} % Matrix
+\newcommand{\tr}[1]{#1 \phantom{}'} % Transpose
+\newcommand{\trT}[1]{#1^T} % Transpose with T
+\newcommand{\inv}[1]{#1^{-1}} % Inverse
+\newcommand{\invp}[1]{\paren{#1}^{-1}} % Parenthetical Inverse
+\newcommand{\Id}{\mat{I}} % Identity Matrix
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% LOGIC
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\notimplies}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% COLORS
+%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\grammar}[1]{\textcolor{ForestGreen}{#1}}
+\renewcommand{\math}[1]{\textcolor{Maroon}{#1}}
+\newcommand{\comment}[1]{\textcolor{Cerulean}{#1}}
+\newcommand{\question}[1]{\textcolor{Magenta}{#1}}
+\newcommand{\doubt}[1]{\textcolor{Fuchsia}{#1}}
