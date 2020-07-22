@@ -108,11 +108,27 @@ Alternatively, you can put that content in files like 00--prelim.Rmd and
 
 
 
-```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00--prelim.Rmd")}
+```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-prelimtitle.Rmd")}
 
 ```
 
+`r if(!knitr:::is_latex_output()) '# Abstract {-}'`
 ```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-abstract.Rmd")}
+
+```
+
+`r if(!knitr:::is_latex_output()) '# Acknowledgments {-}'`
+```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-acknowledgments.Rmd")}
+
+```
+
+`r if(!knitr:::is_latex_output()) '# Dedication {-}'`
+```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-dedication.Rmd")}
+
+```
+
+`r if(!knitr:::is_latex_output()) '# Preface {-}'`
+```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-preface.Rmd")}
 
 ```
 
