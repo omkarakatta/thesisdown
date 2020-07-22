@@ -104,6 +104,7 @@
 % End of CII add
 
 % This gives us rules below the headers
+
 \AtBeginDocument{%
   \fancyhf{}
   \if@twoside
@@ -111,8 +112,9 @@
     	 \fancyhead[RE]{\small \slshape \nouppercase \rightmark} % This makes the headers on the RIGHT side pages be italic and use lowercase With Capitals When Specified.
     	\fancyhead[LO]{\small \slshape \nouppercase \leftmark} % This does the same thing to the LEFT side pages
     \else
-%	\fancyhead[L]{\small \slshape \nouppercase \rightmark}
-	\fancyhead[R]{{\footnotesize \bfseries \MakeUppercase \leftmark} \quad {\small \slshape \thepage}}
+	\fancyhead[L]{{\footnotesize \slshape \MakeUppercase \leftmark}}
+	\fancyhead[R]{{\footnotesize  \slshape \MakeUppercase \rightmark} \hspace{4em}}
+	\fancyfoot[C]{{\small \slshape \thepage}}
 	\fi
   \pagestyle{fancy}
   \renewcommand{\chaptermark}[1]{% 
@@ -200,24 +202,24 @@
 %\addtolength\textheight{\headheight}
 %\addtolength\textheight{\headsep}
 
-\def\degree#1{\gdef \@degree{#1}}
-\def\@degree{\@latex@warning@no@line{No \noexpand\degree given}}
-\def\institution#1{\gdef \@institution{#1}}
-\def\@institution{\@latex@warning@no@line{No \noexpand\institution given}}
-\def\division#1{\gdef \@division{#1}}
-\def\@division{\@latex@warning@no@line{No \noexpand\division given}}
-\def\department#1{\gdef \@department{#1}}
-\def\@department{\@latex@warning@no@line{No \noexpand\department given}}
-\def\thedivisionof#1{\gdef \@thedivisionof{#1}}
-\def\@thedivisionof{The Division of}
-\def\approvedforthe#1{\gdef \@approvedforthe{#1}}
-\def\@approvedforthe{Division}
-\def\advisor#1{\gdef \@advisor{#1}}
-\def\@advisor{\@latex@warning@no@line{No \noexpand\advisor given}}
-\def\altadvisor#1{\gdef \@altadvisor{#1} \@altadvisortrue}
-\global\let\@altadvisor\@empty
-\newif\if@altadvisor
-\@altadvisorfalse
+%\def\degree#1{\gdef \@degree{#1}}
+%\def\@degree{\@latex@warning@no@line{No \noexpand\degree given}}
+%\def\institution#1{\gdef \@institution{#1}}
+%\def\@institution{\@latex@warning@no@line{No \noexpand\institution given}}
+%\def\division#1{\gdef \@division{#1}}
+%\def\@division{\@latex@warning@no@line{No \noexpand\division given}}
+%\def\department#1{\gdef \@department{#1}}
+%\def\@department{\@latex@warning@no@line{No \noexpand\department given}}
+%\def\thedivisionof#1{\gdef \@thedivisionof{#1}}
+%\def\@thedivisionof{The Division of}
+%\def\approvedforthe#1{\gdef \@approvedforthe{#1}}
+%\def\@approvedforthe{Division}
+%\def\advisor#1{\gdef \@advisor{#1}}
+%\def\@advisor{\@latex@warning@no@line{No \noexpand\advisor given}}
+%\def\altadvisor#1{\gdef \@altadvisor{#1} \@altadvisortrue}
+%\global\let\@altadvisor\@empty
+%\newif\if@altadvisor
+%\@altadvisorfalse
 
 \renewcommand\l@chapter[2]{%
   \ifnum \c@tocdepth >\m@ne
@@ -291,6 +293,9 @@
 % I hacked the title page to all be the same font size
 % as requested by the library, BTS 2005
 
+% The title page was originally from the thesisdown template.
+% I changed it using: https://www.latextemplates.com/template/formal-book-title-page
+
 \renewcommand{\maketitle}{%
   {\pagestyle{empty}
   \fontsize{12}{14}\selectfont
@@ -299,57 +304,115 @@
   \let\footnotesize\small
   \let\footnoterule\relax
   \let \footnote \thanks
+  
+  \centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page
+	
+	\vspace*{\baselineskip} % White space at the top of the page
 
   \baselineskip = 1.4\baselineskip
-  \setbox0=\hbox{of the Requirements for the Degree}
+%  \setbox0=\hbox{of the Requirements for the Degree}
 
-  \begin{center}
-    \setcounter{page}{1}
-    \null\vfil
-    {\fontsize{12}{14}\selectfont \@title}
-    \vfil
-    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
-    \vfil
-    A Thesis \\
-    Presented to \\
-    \@thedivisionof \ \@division \\
-    \@institution
-    \vfil
-    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
-    \vfil
-    In Partial Fulfillment \\
-    of the Requirements for the Degree \\
-    \@degree
-    \vfil
-    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
-    \bigskip
-    \centerline{}
-    \bigskip
-    {\fontsize{12}{14}\selectfont \lineskip .75em
-    \begin{tabular}[t]{c}%
-      \@author
-    \end{tabular}\par}
-    \vskip 1.5em
-    {\fontsize{12}{14}\selectfont \@date \par}
-  \end{center}\par
+  \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.75\baselineskip} % Whitespace above the title
+	
+	{\LARGE \@title\\} % Title
+	
+	\vspace{0.75\baselineskip} % Whitespace below the title
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	\rule{\textwidth}{1.6pt} % Thick horizontal rule
+	
+	\vspace{2\baselineskip} % Whitespace after the title block
+	
+	%------------------------------------------------
+	%	Subtitle
+	%------------------------------------------------
+	
+%	A Number of Fascinating and Life-changing Templates Presented in a Clear and Concise Way % Subtitle or further description
+%	
+%	\vspace*{3\baselineskip} % Whitespace under the subtitle
+	
+	%------------------------------------------------
+	%	Editor(s) and Author(s)
+	%------------------------------------------------
+	
+%	Edited By
+	
+	\vspace{0.5\baselineskip} % Whitespace before the editors
+	
+	{\Large \@author \\} % Editor list
+	
+%	\vspace{0.5\baselineskip} % Whitespace below the editor list
+%	
+%	\textit{The University of California \\ Berkeley} % Editor affiliation
+	
+	\vfill % Whitespace between editor names and publisher logo
+	
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	
+%	\plogo % Publisher logo
+%	
+%	\vspace{0.3\baselineskip} % Whitespace under the publisher logo
+%	
+	\@date % Publication year
+%	
+%	{\large publisher} % Publisher
+  
+
+%  \begin{center}
+%    \setcounter{page}{1}
+%    \null\vfil
+%    {\fontsize{12}{14}\selectfont \@title}
+%    \vfil
+%    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
+%    \vfil
+%    A Thesis \\
+%    Presented to \\
+%    \@thedivisionof \ \@division \\
+%    \@institution
+%    \vfil
+%    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
+%    \vfil
+%    In Partial Fulfillment \\
+%    of the Requirements for the Degree \\
+%    \@degree
+%    \vfil
+%    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
+%    \bigskip
+%    \centerline{}
+%    \bigskip
+%    {\fontsize{12}{14}\selectfont \lineskip .75em
+%    \begin{tabular}[t]{c}%
+%      \@author
+%    \end{tabular}\par}
+%    \vskip 1.5em
+%    {\fontsize{12}{14}\selectfont \@date \par}
+%  \end{center}\par
   \end{titlepage}
-
-%% Approved for the division page
-  \cleardoublepage
-  {\fontsize{12}{14}
-  \setbox0=\hbox{Approved for the \@approvedforthe}
-  \thispagestyle{empty}
-  \null\vfil		% just below center of page
-  \par\vskip 6cm	% below center, not center
-  \centerline{\copy0}	% approved
-  \centerline{(\@department)} %major
-  \vskip 1cm		%space to sign
-  \centerline{\makebox[\wd0][c]{\hrulefill}
-	\if@altadvisor \makebox[.5in]{} \makebox[\wd0][c]{\hrulefill} \fi}
-  \centerline{\makebox[\wd0][c]{\@advisor}
-	\if@altadvisor \makebox[.5in]{} \makebox[\wd0][c]{\@altadvisor} \fi}
-  \par\vfil\null}
-  \cleardoublepage
+%
+%%% Approved for the division page
+%  \cleardoublepage
+%  {\fontsize{12}{14}
+%  \setbox0=\hbox{Approved for the \@approvedforthe}
+%  \thispagestyle{empty}
+%  \null\vfil		% just below center of page
+%  \par\vskip 6cm	% below center, not center
+%  \centerline{\copy0}	% approved
+%  \centerline{(\@department)} %major
+%  \vskip 1cm		%space to sign
+%  \centerline{\makebox[\wd0][c]{\hrulefill}
+%	\if@altadvisor \makebox[.5in]{} \makebox[\wd0][c]{\hrulefill} \fi}
+%  \centerline{\makebox[\wd0][c]{\@advisor}
+%	\if@altadvisor \makebox[.5in]{} \makebox[\wd0][c]{\@altadvisor} \fi}
+%  \par\vfil\null}
+%  \cleardoublepage
+  
   }
 }
 

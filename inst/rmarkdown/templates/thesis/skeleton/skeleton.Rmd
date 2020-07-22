@@ -2,13 +2,6 @@
 title: 'My Notebook'
 author: 'Your R. Name'
 date: 'May 20xx'
-institution: 'Reed College'
-division: 'Mathematics and Natural Sciences'
-advisor: 'Advisor F. Name'
-# If you have more two advisors, un-silence line 7
-#altadvisor: 'Your Other Advisor'
-department: 'Mathematics'
-degree: 'Bachelor of Arts'
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 
@@ -143,7 +136,7 @@ Alternatively, you can put that content in files like 00--prelim.Rmd and
 "Chapter 0." You can also use {-} for no numbers on chapters.
 -->
 
-# (PART) --- {-}
+<!-- # (PART) --- {-} -->
 
 # Introduction {.unnumbered}
 
