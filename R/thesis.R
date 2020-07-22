@@ -55,15 +55,14 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default",
 #' \dontrun{
 #' output:thesisdown::thesis_gitbook
 #' }
-thesis_gitbook <- function(...) {
+thesis_gitbook <- function(before = '<li><a href="./"></a></li>',
+                           after = '<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>',
+                           ...) {
   config_default <- list(
     toc = list(
       collapse = "section",
-      before = '<li><a href="./"></a></li>',
-      after = paste(
-        '<li><a href="https://github.com/rstudio/bookdown',
-        'target="blank">Published with bookdown</a></li>'
-      )
+      before = before,
+      after = after
     )
   )
 
