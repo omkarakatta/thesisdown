@@ -1,5 +1,5 @@
 ---
-title: 'My Final College Paper'
+title: 'My Notebook'
 author: 'Your R. Name'
 date: 'May 20xx'
 institution: 'Reed College'
@@ -25,7 +25,8 @@ params:
 # Can only choose one at a time.
 output:
   oakdown::thesis_pdf: default 
-#  oakdown::thesis_gitbook: default         
+ # oakdown::thesis_gitbook: 
+ #    before: '<li><a href="./">MY NOTEBOOK</a></li>'
 #  oakdown::thesis_word: default
 #  oakdown::thesis_epub: default
 
