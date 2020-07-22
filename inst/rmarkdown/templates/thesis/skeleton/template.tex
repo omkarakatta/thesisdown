@@ -204,17 +204,17 @@ $if(pdfpreface)$
 $endif$
 $endif$
 
-$if(include-toc)$
+$if(include-pdftoc)$
   \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
   \setcounter{tocdepth}{$toc-depth$}
   \tableofcontents
 $endif$
 
-$if(include-lot)$
+$if(include-pdflot)$
   \listoftables
 $endif$
 
-$if(include-lof)$
+$if(include-pdflof)$
   \listoffigures
 $endif$
 
