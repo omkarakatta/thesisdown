@@ -172,32 +172,32 @@ $endif$
 \frontmatter % this stuff will be roman-numbered
 \pagestyle{empty} % this removes page numbers from the frontmatter
 
-$if(include-abstract)$
-$if(abstract)$
+$if(include-pdfabstract)$
+$if(pdfabstract)$
   \begin{abstract}
     $abstract$
   \end{abstract}
 $endif$
 $endif$
 
-$if(include-acknowledgements)$
-$if(acknowledgments)$
+$if(include-pdfacknowledgements)$
+$if(pdfacknowledgments)$
   \begin{acknowledgments}
     $acknowledgments$
   \end{acknowledgments}
 $endif$
 $endif$
 
-$if(include-dedication)$
-$if(dedication)$
+$if(include-pdfdedication)$
+$if(pdfdedication)$
   \begin{dedication}
     $dedication$
   \end{dedication}
 $endif$
 $endif$
 
-$if(include-preface)$
-$if(preface)$
+$if(include-pdfpreface)$
+$if(pdfpreface)$
   \begin{preface}
     $preface$
   \end{preface}
