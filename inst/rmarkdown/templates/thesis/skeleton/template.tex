@@ -172,42 +172,50 @@ $endif$
 \frontmatter % this stuff will be roman-numbered
 \pagestyle{empty} % this removes page numbers from the frontmatter
 
+$if(include-acknowledgements)$
 $if(acknowledgments)$
   \begin{acknowledgments}
     $acknowledgments$
   \end{acknowledgments}
 $endif$
+$endif$
 
+$if(include-preface)$
 $if(preface)$
   \begin{preface}
     $preface$
   \end{preface}
 $endif$
+$endif$
 
-$if(toc)$
+$if(include-toc)$
   \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
   \setcounter{tocdepth}{$toc-depth$}
   \tableofcontents
 $endif$
 
-$if(lot)$
+$if(include-lot)$
   \listoftables
 $endif$
 
-$if(lof)$
+$if(include-lof)$
   \listoffigures
 $endif$
 
+$if(include-abstract)$
 $if(abstract)$
   \begin{abstract}
     $abstract$
   \end{abstract}
 $endif$
+$endif$
 
+$if(include-dedication)$
 $if(dedication)$
   \begin{dedication}
     $dedication$
   \end{dedication}
+$endif$
 $endif$
 
 \mainmatter % here the regular arabic numbering starts
