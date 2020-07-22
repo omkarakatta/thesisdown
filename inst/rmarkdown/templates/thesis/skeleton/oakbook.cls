@@ -6,7 +6,7 @@
 % 27 Jan 2004	Sam Noble	Removed tocbibind dependency.
 % 04 Dec 2001 	Sam Noble	Class file
 % 03 Sep 1995	David Perkinson	Title Page
-% Acknowledgements Page, David Perkinson & Sam Noble
+% Acknowledgments Page, David Perkinson & Sam Noble
 % May 2005 Patrick Carlisle Table of contents chapter definition
 % 2004-2005 Ben Salzberg (BTS) a variety of tweaks here and in the template
 % 2015 Chester Ismay (CII) modified to create R Markdown template
@@ -238,13 +238,13 @@
   \fi}
 
 %%% Added by CII
-\newenvironment{acknowledgements}{%
+\newenvironment{acknowledgments}{%
   \if@twocolumn
     \@restonecoltrue\onecolumn
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Acknowledgements}
+  \chapter*{Acknowledgments}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
@@ -361,7 +361,7 @@
 \newcommand{\Abstract}[1]{\def\@Abstract{#1}}
 %\newcommand{\Keywords}[1]{\def\@Keywords{#1}}
 %\newcommand{\Plainkeywords}[1]{\def\@Plainkeywords{#1}}
-\newcommand{\Acknowledgements}[1]{\def\@Acknowledgements{#1}}
+\newcommand{\Acknowledgments}[1]{\def\@Acknowledgments{#1}}
 \newcommand{\Dedication}[1]{\def\@Dedication{#1}}
 \newcommand{\Preface}[1]{\def\@Preface{#1}}
 % End of CII add
