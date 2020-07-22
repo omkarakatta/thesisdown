@@ -34,6 +34,7 @@ include-pdfpreface: TRUE
 include-pdftoc: TRUE
 include-pdflot: FALSE
 include-pdflof: TRUE
+
 pdfabstract: |
   '`r if(knitr:::is_latex_output()) paste(readLines(here::here("prelims", "00-abstract.Rmd")), collapse = "\n  ")`'
 # If you'd rather include the preliminary content in files instead of inline
