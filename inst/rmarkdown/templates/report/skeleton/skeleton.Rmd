@@ -1,15 +1,20 @@
 ---
 # Inspired by Michael Harper: https://github.com/dr-harper/example-rmd-templates
 title: "Title"
-name: Omkar A. Katta
+author: Omkar A. Katta
 teammates: teammate
 task: task
 supervisor: supervisor
-due: '`r format(Sys.Date(), "%B %d, %Y")`'
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
   bookdown::pdf_document2:
     template: reporttemplate.tex 
     latex_engine: xelatex
+  bookdown::html_document2:
+    theme: paper
+    toc: true
+    toc_float: true
+    highlight: tango
 toc: true
 # header-includes:
 bibliography: master.bib

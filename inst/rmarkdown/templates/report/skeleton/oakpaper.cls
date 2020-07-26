@@ -34,21 +34,21 @@
 
 \def\title#1{\gdef\@title{#1}}
 \def\@title{\@latex@warning@no@line{No \noexpand\title given}}
-\def\name#1{\gdef\@name{#1}}
-\def\@name{\@latex@warning@no@line{No \noexpand\name given}}
+\def\author#1{\gdef\@author{#1}}
+\def\@author{\@latex@warning@no@line{No \noexpand\author given}}
 \def\task#1{\gdef\@task{#1}}
 \def\@task{\@latex@warning@no@line{No \noexpand\task given}}
 \def\supervisor#1{\gdef\@supervisor{#1}}
 \def\@supervisor{\@latex@warning@no@line{No \noexpand\supervisor given}}
-\def\due#1{\gdef\@due{#1}}
-\def\@due{\@latex@warning@no@line{No \noexpand\due given}}
+\def\date#1{\gdef\@date{#1}}
+\def\@date{\@latex@warning@no@line{No \noexpand\date given}}
 
 %\def\subtitle#1{\gdef\@subtitle{#1}}
 %\def\@subtitle{\@latex@warning@no@line{No \noexpand\subtitle given}}
 
 \renewcommand{\maketitle}{%
     \noindent\rule{\textwidth}{1.5pt}\\[10pt]
-    {\large \textbf{\@name} \hfill \@due} \\[\baselineskip]
+    {\large \textbf{\@author} \hfill \@date} \\[\baselineskip]
     {\LARGE\centerline{\textbf{\@title}}} \\[0.75\baselineskip]
     {\normalsize \@task \hfill \@supervisor} 
     \rule{\textwidth}{1.5pt}
