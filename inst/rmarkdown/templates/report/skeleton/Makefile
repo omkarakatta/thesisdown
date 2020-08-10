@@ -16,6 +16,12 @@ getmasterbib:
 	mv papers/master.bib master.bib
 	rm -rf papers/
 
+getmakefile:
+	rm -rf Makefile
+	git clone --depth=1 https://github.com/omkarakatta/oakdown-makefile
+	mv oakdown-makefile/Makefile Makefile
+	rm -rf oakdown-makefile/
+
 cleanpdf:
 	rm *.pdf
 
