@@ -8,7 +8,8 @@ clean:
 getOAKdefn:
 	rm -rf OAKdefn/
 	git clone --depth=1 https://github.com/omkarakatta/OAKdefn
-	rm -rf OAKdefn/.git
+	mv OAKdefn/OAKdefn.sty OAKdefn.sty
+	rm -rf OAKdefn/
 
 getmasterbib:
 	rm -rf papers/
