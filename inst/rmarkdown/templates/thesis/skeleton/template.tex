@@ -164,6 +164,16 @@ $endfor$
 %%
 %
 
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+
 \begin{document}
 
 % Everything below added by CII
@@ -207,7 +217,6 @@ $endif$
 $endif$
 
 $if(include-pdftoc)$
-  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
   \setcounter{tocdepth}{$toc-depth$}
   \tableofcontents
 $endif$
