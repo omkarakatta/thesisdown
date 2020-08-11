@@ -188,50 +188,50 @@ $endif$
 \frontmatter % this stuff will be roman-numbered
 \pagestyle{empty} % this removes page numbers from the frontmatter
 
-$if(include-pdfabstract)$
-$if(pdfabstract)$
-  \begin{abstract}
-    $pdfabstract$
-  \end{abstract}
-$endif$
-$endif$
-
-$if(include-pdfacknowledgements)$
-$if(pdfacknowledgments)$
-  \begin{acknowledgments}
-    $pdfacknowledgments$
-  \end{acknowledgments}
-$endif$
-$endif$
-
-$if(include-pdfdedication)$
-$if(pdfdedication)$
-  \begin{dedication}
-    $pdfdedication$
-  \end{dedication}
-$endif$
-$endif$
-
-$if(include-pdfpreface)$
-$if(pdfpreface)$
-  \begin{preface}
-    $pdfpreface$
-  \end{preface}
-$endif$
-$endif$
-
-$if(include-pdftoc)$
-  \setcounter{tocdepth}{$toc-depth$}
-  \tableofcontents
-$endif$
-
-$if(include-pdflot)$
-  \listoftables
-$endif$
-
-$if(include-pdflof)$
-  \listoffigures
-$endif$
+%$if(include-pdfabstract)$
+%$if(pdfabstract)$
+%  \begin{abstract}
+%    $pdfabstract$
+%  \end{abstract}
+%$endif$
+%$endif$
+%
+%$if(include-pdfacknowledgements)$
+%$if(pdfacknowledgments)$
+%  \begin{acknowledgments}
+%    $pdfacknowledgments$
+%  \end{acknowledgments}
+%$endif$
+%$endif$
+%
+%$if(include-pdfdedication)$
+%$if(pdfdedication)$
+%  \begin{dedication}
+%    $pdfdedication$
+%  \end{dedication}
+%$endif$
+%$endif$
+%
+%$if(include-pdfpreface)$
+%$if(pdfpreface)$
+%  \begin{preface}
+%    $pdfpreface$
+%  \end{preface}
+%$endif$
+%$endif$
+%
+%$if(include-pdftoc)$
+%  \setcounter{tocdepth}{$toc-depth$}
+%  \tableofcontents
+%$endif$
+%
+%$if(include-pdflot)$
+%  \listoftables
+%$endif$
+%
+%$if(include-pdflof)$
+%  \listoffigures
+%$endif$
 
 
 
