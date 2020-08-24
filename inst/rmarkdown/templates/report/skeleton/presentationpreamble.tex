@@ -1,0 +1,157 @@
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+%\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usepackage{enumerate}
+
+\usepackage{OAKdefn/OAKdefn}
+
+\usepackage{amssymb, amsmath, amsfonts, latexsym, mathtools, nccmath, xfrac}
+\usepackage{graphicx}
+\usepackage{optidef}
+\usepackage{bbm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Colors
+% 	inspired by https://paulgp.github.io/beamer_tips.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{blue}{RGB}{0,114,178}
+\definecolor{red}{RGB}{128,0,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{Purple}{HTML}{911146}
+
+
+% Signature Color Palette
+	\definecolor{ChicagoMaroon}{RGB}{128,0,0}
+	\definecolor{ChicagoDarkGray}{RGB}{118,118,118}
+	\definecolor{ChicagoLightGray}{RGB}{214,214,206}
+	\definecolor{MainText}{RGB}{0, 0, 0}
+
+% Secondary Color Palette
+	\definecolor{ChicagoRed}{RGB}{143,57,49}
+	\definecolor{ChicagoOrange}{RGB}{193,102,34}
+	\definecolor{ChicagoLightGreen}{RGB}{138,157,69}
+	\definecolor{ChicagoDarkGreen}{RGB}{101,109,51}	
+	\definecolor{ChicagoBlue}{RGB}{21,95,131}
+	\definecolor{ChicagoBlueLight}{RGB}{91,150,173}
+	\definecolor{ChicagoBlueDark}{RGB}{21,67,95}
+	\definecolor{ChicagoViolet}{RGB}{53,14,32}
+		
+% Colors for the Shading
+	\definecolor{RedShade1}{RGB}{138,0,0} % Colors taken from UChicago Powerpoint slides
+	\definecolor{RedShade2}{RGB}{68,0,0}
+	
+	
+
+\definecolor{MyBackground}{RGB}{250, 250, 250}
+
+\setbeamercolor{background canvas}{bg=MyBackground}
+\definecolor{StandoutBackground}{RGB}{202, 215, 227}
+
+\newenvironment{transitionframe}{
+\setbeamercolor{background canvas}{bg=StandoutBackground}
+\begin{frame}}{
+\end{frame}
+}
+
+\setbeamercolor{frametitle}{fg=white, bg = red}
+\setbeamercolor{title}{fg=black}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{itemize item}{fg=ChicagoMaroon}
+\setbeamercolor{itemize subitem}{fg=ChicagoMaroon}
+\setbeamercolor{enumerate item}{fg=ChicagoMaroon}
+\setbeamercolor{enumerate subitem}{fg=ChicagoMaroon}
+\setbeamercolor{button}{bg=ChicagoMaroon, fg=MyBackground}
+
+
+
+
+\setbeamercolor{block title alerted}{fg=white,bg=ChicagoBlue}
+\setbeamercolor{block body alerted}{bg=ChicagoBlueLight!50!white}
+
+\setbeamercolor{block title}{bg=ChicagoMaroon,fg=white}
+\setbeamercolor{block body}{bg=ChicagoLightGray}
+	
+\setbeamercolor{block title example}{bg=ChicagoDarkGreen,fg=white}
+\setbeamercolor{block body example}{bg=ChicagoLightGreen!25!white}
+
+
+\setbeamercolor*{enumerate item}{fg=ChicagoMaroon}
+\setbeamercolor*{enumerate subitem}{fg=ChicagoMaroon}
+\setbeamercolor*{enumerate subsubitem}{fg=ChicagoMaroon}
+
+
+\setbeamercolor*{itemize item}{fg=ChicagoMaroon}
+\setbeamercolor*{itemize subitem}{fg=ChicagoMaroon}
+\setbeamercolor*{itemize subsubitem}{fg=ChicagoMaroon}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	ToC at beginning of every section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate{section in toc}{sections numbered roman}{%
+  \leavevmode%
+  \MakeUppercase{\romannumeral\inserttocsectionnumber}.\ %
+  \inserttocsection\par}
+ 
+\AtBeginSection[]
+  {
+     \begin{frame}<beamer>
+     \setbeamertemplate{section in toc}[sections numbered roman]
+     \frametitle{Outline}
+     \tableofcontents[currentsection]
+     \end{frame}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment<>{definition}[1]{%
+  \setbeamercolor{block title}{fg=black,bg=lightgray}
+  \begin{block}#2{#1}}{\end{block}}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\textwidth, sep=3ex]{footline}%
+    \usebeamerfont{page number in head/foot}%
+    \usebeamertemplate*{frame footer}
+    \hfill%
+    \insertsection \quad
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}%
+  }
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%\setbeameroption{show notes} % un-comment to see the notes
+\newcommand*{\myparskip}{\vspace{2em}} 
+
+
+\setbeamertemplate{frametitle continuation}[from second][\insertcontinuationcountroman]
+
+\newenvironment{wideitemize}{\setlength{\leftmargini}{0pt}\itemize\addtolength{\itemsep}{1em}}{\enditemize}
+
+\DeclareMathOperator{\argmin}{argmin}
+
+

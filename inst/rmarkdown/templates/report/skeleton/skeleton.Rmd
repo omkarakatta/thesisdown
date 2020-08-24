@@ -15,6 +15,13 @@ output:
     toc: true
     toc_float: true
     highlight: tango
+  beamer_presentation:
+    keep_tex: yes
+    slide_level: 2
+    theme: metropolis
+    latex_engine: xelatex
+    includes:
+      in_header: presentationpreamble.tex
 toc: true
 # header-includes:
 bibliography: master.bib
