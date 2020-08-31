@@ -5,6 +5,15 @@ clean:
 	rm -fv *.gz
 	rm -R figure
 
+pdf:
+	Rscript -e 'bookdown::render_book("index.Rmd", "oakdown::thesis_pdf")'
+	rm -f *.log *.mtc* *.maf *.aux *.bcf *.lof *.lot *.out *.toc 
+	Rscript -e 'browseURL("_book/book.pdf")'
+
+gitbook:
+	Rscript -e 'bookdown::render_book("index.Rmd", "oakdown::thesis_gitbook")'
+	Rscript -e 'browseURL("_book/index.html")'
+
 getOAKdefn:
 	rm -rf OAKdefn/
 	git clone --depth=1 https://github.com/omkarakatta/OAKdefn
