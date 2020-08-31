@@ -8,15 +8,17 @@ clean:
 pdf:
 	Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::pdf_document2")'
 	rm -f *.log *.mtc* *.maf *.aux *.bcf *.lof *.lot *.out *.toc 
-	mkdir -p rendered/pdf
-	mv _book/_main.pdf rendered/pdf/report.pdf
+	mkdir -p rendered
+	mv _book pdf
+	mv pdf rendered/pdf
+	mv rendered/pdf/_main.pdf rendered/pdf/report.pdf
 	Rscript -e 'browseURL("rendered/pdf/report.pdf")'
 	rm -rf _book/
 
 html:
 	Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::html_document2")'
 	mkdir -p rendered/html
-	mv report.html rendered/html/report.html
+	mv _main.html rendered/html/report.html
 	Rscript -e 'browseURL("rendered/html/report.html")'
 
 slides:
