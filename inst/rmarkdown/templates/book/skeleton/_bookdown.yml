@@ -1,0 +1,6 @@
+book_filename: "book"
+chapter_name: "Chapter "
+download: [
+    ["book.pdf", "PDF"]
+  ]
+delete_merged_file: true
